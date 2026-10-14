@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bu2a1dexgi7hu"]
+
+[ext_resource type="Script" uid="uid://dol23nkspk4sh" path="res://item_slot.gd" id="1_n6cxc"]
+
+[node name="ItemSlot" type="Button" unique_id=1253806152]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_n6cxc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=849351599]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PriceLabel" type="Label" parent="." unique_id=811476468]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -13.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "20k"
+horizontal_alignment = 1

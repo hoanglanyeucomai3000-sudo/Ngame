@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://bahavpq2kmryr"]
+
+[ext_resource type="Texture2D" uid="uid://86mrpgeh60e8" path="res://Hành_lang_trường_học_pixel_đối_xứng-removebg-preview.png" id="1_4xl3d"]
+[ext_resource type="Script" uid="uid://wq8jgi7o2lwa" path="res://door_to_12a_1.gd" id="2_oqt80"]
+[ext_resource type="PackedScene" uid="uid://bj2e1qt31ov7s" path="res://player.tscn" id="2_ycsc1"]
+[ext_resource type="PackedScene" uid="uid://l7jharap87hf" path="res://energy_ui.tscn" id="4_4af7n"]
+[ext_resource type="PackedScene" uid="uid://cj6e1itti3gww" path="res://clock_ui.tscn" id="5_x1sfa"]
+[ext_resource type="PackedScene" uid="uid://b2atyi2krw5e6" path="res://inventory_ui.tscn" id="6_a15ei"]
+[ext_resource type="Script" uid="uid://bv6h2iww8qwma" path="res://day_night_cycle.gd" id="8_x1sfa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm2ee"]
+size = Vector2(24.999985, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j00l"]
+size = Vector2(397, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_881uw"]
+size = Vector2(93.33333, 25.666666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pew36"]
+size = Vector2(386.66663, 50)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rm2ee"]
+a = Vector2(-427.6667, 39.66667)
+b = Vector2(428.33334, 38.66667)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5j00l"]
+a = Vector2(-427.33334, 39.333336)
+b = Vector2(-427.33334, 18.333336)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_881uw"]
+a = Vector2(428.66666, 17.333336)
+b = Vector2(428.00003, 39)
+
+[node name="tang1" type="Node2D" unique_id=2049973135]
+
+[node name="HanhLang" type="Sprite2D" parent="." unique_id=1102097122]
+position = Vector2(1294, 126)
+scale = Vector2(3, 3)
+texture = ExtResource("1_4xl3d")
+
+[node name="DoorTo12A1" type="Area2D" parent="HanhLang" unique_id=184457663]
+script = ExtResource("2_oqt80")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HanhLang/DoorTo12A1" unique_id=829520576]
+position = Vector2(-64.5, 12.833336)
+shape = SubResource("RectangleShape2D_rm2ee")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HanhLang" unique_id=1955307299]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HanhLang/StaticBody2D" unique_id=1212397620]
+position = Vector2(-228.83334, -8.666664)
+shape = SubResource("RectangleShape2D_5j00l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HanhLang/StaticBody2D" unique_id=997924123]
+position = Vector2(2.6666565, -28.833332)
+shape = SubResource("RectangleShape2D_881uw")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HanhLang/StaticBody2D" unique_id=1698023211]
+position = Vector2(236.00003, -8)
+shape = SubResource("RectangleShape2D_pew36")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="HanhLang/StaticBody2D" unique_id=352836440]
+shape = SubResource("SegmentShape2D_rm2ee")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="HanhLang/StaticBody2D" unique_id=157850949]
+shape = SubResource("SegmentShape2D_5j00l")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="HanhLang/StaticBody2D" unique_id=382096312]
+shape = SubResource("SegmentShape2D_881uw")
+
+[node name="player" parent="." unique_id=1757968040 instance=ExtResource("2_ycsc1")]
+position = Vector2(1280, 196)
+
+[node name="AnimatedSprite2D" parent="player" index="0" unique_id=2146770196]
+position = Vector2(-1.4285698, -2.8571472)
+animation = &"down"
+
+[node name="Camera2D" parent="player" index="2" unique_id=471042856]
+limit_left = 9
+limit_top = 19
+limit_right = 2584
+limit_bottom = 242
+
+[node name="HeldItemSprite" parent="player" index="3" unique_id=455155580]
+position = Vector2(-1.4285717, -45.714287)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=592986911]
+
+[node name="EnergyUI" parent="CanvasLayer" unique_id=1500897593 instance=ExtResource("4_4af7n")]
+
+[node name="ClockUI" parent="CanvasLayer" unique_id=1892560339 instance=ExtResource("5_x1sfa")]
+
+[node name="InventoryUI" parent="CanvasLayer" unique_id=1785806602 instance=ExtResource("6_a15ei")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=41573050]
+script = ExtResource("8_x1sfa")
+
+[editable path="player"]

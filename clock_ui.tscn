@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cj6e1itti3gww"]
+
+[ext_resource type="Script" uid="uid://bmingdj2sxyox" path="res://clock_ui.gd" id="1_5v04q"]
+[ext_resource type="Texture2D" uid="uid://dnbfs3e4hng7s" path="res://Empty_Stardew_Valley_Clock_Sticker-removebg-preview.png" id="2_5v04q"]
+[ext_resource type="Script" uid="uid://vi6wpdes17hs" path="res://money_ui.gd" id="3_01sg0"]
+
+[node name="ClockUI" type="CanvasLayer" unique_id=1892560339]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="ClockUI" type="CanvasLayer" parent="." unique_id=875413592]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+script = ExtResource("1_5v04q")
+
+[node name="ClockPanel" type="Control" parent="ClockUI" unique_id=1867690714]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -570.5
+offset_top = -18.0
+offset_right = -530.5
+offset_bottom = 22.0
+
+[node name="Clockface" type="Sprite2D" parent="ClockUI/ClockPanel" unique_id=27783564]
+position = Vector2(1094, 62)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_5v04q")
+
+[node name="Hourhand" type="ColorRect" parent="ClockUI/ClockPanel" unique_id=480844979]
+layout_mode = 0
+offset_left = 1074.644
+offset_top = 30.25322
+offset_right = 1077.0527
+offset_bottom = 48.844162
+rotation = -0.47472957
+pivot_offset = Vector2(3, 20)
+color = Color(0.15397206, 0.056359068, 0.0011857192, 1)
+
+[node name="Timelabel" type="Label" parent="ClockUI/ClockPanel" unique_id=271596257]
+layout_mode = 0
+offset_left = 1082.0
+offset_top = 59.0
+offset_right = 1134.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.022764754, 0.012102327, 0.006519786, 1)
+theme_override_font_sizes/font_size = 9
+text = "06:00 AM"
+horizontal_alignment = 1
+
+[node name="DayLabel" type="Label" parent="ClockUI/ClockPanel" unique_id=1208390295]
+layout_mode = 0
+offset_left = 1082.0
+offset_top = 29.0
+offset_right = 1134.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Mon. 1"
+horizontal_alignment = 1
+
+[node name="MoneyUI" type="CanvasLayer" parent="." unique_id=1989171138]
+script = ExtResource("3_01sg0")
+
+[node name="MoneyLabel" type="Label" parent="MoneyUI" unique_id=1122842285]
+offset_left = 999.0
+offset_top = 127.0
+offset_right = 1121.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_font_sizes/font_size = 26
+text = "200"
+horizontal_alignment = 2

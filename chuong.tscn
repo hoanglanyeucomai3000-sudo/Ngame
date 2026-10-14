@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ctg0uojootukr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm2ee"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="chuong" type="CharacterBody2D" unique_id=1613879306]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=181185226]
+sprite_frames = SubResource("SpriteFrames_rm2ee")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1403045074]

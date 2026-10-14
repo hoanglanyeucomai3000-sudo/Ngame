@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dcae7ufkt21h1"]
+
+[ext_resource type="Script" uid="uid://cx4q5y2nw4dvu" path="res://bread_npc.gd" id="1_xfgwa"]
+[ext_resource type="Texture2D" uid="uid://b45rjrqlffphv" path="res://Bà chủ quầy thu ngân bốn cảm xúc.png" id="2_tdgjt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aveo"]
+atlas = ExtResource("2_tdgjt")
+region = Rect2(0, 0, 768, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfgwa"]
+atlas = ExtResource("2_tdgjt")
+region = Rect2(0, 0, 768, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdgjt"]
+atlas = ExtResource("2_tdgjt")
+region = Rect2(0, 512, 768, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm2ee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7aveo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfgwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdgjt")
+}],
+"loop": 1,
+"name": &"Sell",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_881uw"]
+radius = 230.5
+height = 1462.0
+
+[node name="BreadNPC" type="Area2D" unique_id=1447209272]
+script = ExtResource("1_xfgwa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1359237278]
+position = Vector2(-12, -18)
+sprite_frames = SubResource("SpriteFrames_rm2ee")
+animation = &"Sell"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1010482880]
+position = Vector2(85, 412)
+shape = SubResource("CapsuleShape2D_881uw")

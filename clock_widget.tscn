@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bceis7tahilvl"]
+
+[ext_resource type="Texture2D" uid="uid://dnbfs3e4hng7s" path="res://Empty_Stardew_Valley_Clock_Sticker-removebg-preview.png" id="1_w4ttj"]
+[ext_resource type="Script" uid="uid://bmingdj2sxyox" path="res://clock_ui.gd" id="2_trvqr"]
+[ext_resource type="Texture2D" uid="uid://c4qv4f83n7qf2" path="res://image-removebg-preview (23).png" id="3_on78v"]
+[ext_resource type="Script" uid="uid://vi6wpdes17hs" path="res://money_ui.gd" id="4_kl4th"]
+
+[node name="ClockWidget" type="Control" unique_id=1248814609]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1177.0
+offset_bottom = 496.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1062454459]
+layout_mode = 0
+offset_left = 671.0
+offset_top = -27.0
+offset_right = 1171.0
+offset_bottom = 473.0
+texture = ExtResource("1_w4ttj")
+
+[node name="ClockUI" type="Control" parent="." unique_id=712240854]
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 1174.0
+offset_bottom = 438.0
+script = ExtResource("2_trvqr")
+
+[node name="PivotClockHand" type="Control" parent="ClockUI" unique_id=1216543084]
+layout_mode = 1
+anchor_right = 20.825
+anchor_bottom = 6.517
+offset_left = 793.0
+offset_top = 129.0
+offset_bottom = -91.67999
+
+[node name="Sprite2D" type="Sprite2D" parent="ClockUI/PivotClockHand" unique_id=791386945]
+position = Vector2(34.000008, -5.000002)
+scale = Vector2(0.40300006, 0.327)
+texture = ExtResource("3_on78v")
+
+[node name="TimeLabel" type="Label" parent="ClockUI/PivotClockHand" unique_id=1284950630]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.8000001
+anchor_top = 1.95
+anchor_right = 7.925
+anchor_bottom = 3.325
+
+[node name="DateLabel" type="Label" parent="ClockUI/PivotClockHand" unique_id=1414998160]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.7500001
+anchor_top = -1.725
+anchor_right = 8.075001
+anchor_bottom = -0.275
+offset_right = -3.0517578e-05
+
+[node name="MoneyUI" type="Control" parent="." unique_id=128311401]
+layout_mode = 1
+anchor_left = 19.725
+anchor_top = 8.1
+anchor_right = 27.925001
+anchor_bottom = 9.950001
+offset_bottom = -3.0517578e-05
+script = ExtResource("4_kl4th")
+
+[node name="MoneyLabel" type="Label" parent="MoneyUI" unique_id=1106285576]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.154
+anchor_top = 8.525001
+anchor_right = 17.046001
+anchor_bottom = 9.85
+offset_left = -0.010009766
+offset_top = -3.0517578e-05
+offset_right = 0.009887695

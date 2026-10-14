@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://l7jharap87hf"]
+
+[ext_resource type="Script" uid="uid://cqngyhovxtid2" path="res://energy_ui.gd" id="1_ib1hf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm2ee"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bbtsg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_f4u5k"]
+
+[node name="EnergyUI" type="CanvasLayer" unique_id=1500897593]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+script = ExtResource("1_ib1hf")
+
+[node name="Panel" type="Panel" parent="." unique_id=59917115]
+offset_left = 552.0
+offset_top = 211.0
+offset_right = 572.0
+offset_bottom = 320.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_rm2ee")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1896339357]
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.031000001
+offset_left = 555.0
+offset_top = 213.5
+offset_right = 549.416
+offset_bottom = 295.412
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = SubResource("CanvasTexture_bbtsg")
+texture_progress = SubResource("CanvasTexture_f4u5k")
+tint_under = Color(0.646845, 0.6828852, 0.6191467, 1)
+tint_over = Color(0, 0, 0, 1)
+tint_progress = Color(0.31764707, 0.92156863, 0.18039216, 1)
+
+[node name="EnergyLabel" type="Label" parent="." unique_id=1235656082]
+visible = false
+anchors_preset = -1
+anchor_left = 0.44400004
+anchor_top = 0.32900003
+anchor_right = 0.47800002
+anchor_bottom = 0.36400002
+offset_left = -0.4880371
+offset_top = -0.1920166
+offset_right = 0.34399414
+offset_bottom = 0.12799072

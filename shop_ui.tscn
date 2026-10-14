@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cmghoslxplvli"]
+
+[ext_resource type="Script" uid="uid://bfe3k73q7u473" path="res://shop_ui.gd" id="1_fscwk"]
+
+[sub_resource type="SystemFont" id="SystemFont_1qsc0"]
+subpixel_positioning = 0
+
+[node name="ShopUI" type="Control" unique_id=1360267242]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fscwk")
+
+[node name="Panel" type="Panel" parent="." unique_id=1963005580]
+layout_mode = 0
+offset_right = 291.0
+offset_bottom = 157.0
+
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=1479327494]
+layout_mode = 0
+offset_top = -23.0
+offset_right = 292.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.7879918, 0.95657057, 0.8467983, 1)
+theme_override_fonts/font = SubResource("SystemFont_1qsc0")
+theme_override_font_sizes/font_size = 16
+text = " BÁNH MỲ"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=940579379]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.989
+anchor_bottom = 0.98100007
+offset_right = -0.03200531
+offset_bottom = 0.01399231
+columns = 4

@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://bl0e12c5dp4we"]
+
+[ext_resource type="Script" uid="uid://cils6wvxd6pvt" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Texture2D" uid="uid://be31suxji8awc" path="res://NhanVat/image-removebg-preview (31).png" id="2_xxcha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh24r"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(0, 0, 95, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul7y6"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(95, 0, 95, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc6q4"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(190, 0, 95, 131)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcvl2"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(0, 127, 95, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d61ma"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(95, 127, 95, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slxoh"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(0, 381, 95, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l64hl"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(190, 375, 95, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_215dd"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(95, 375, 95, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5bpe"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(190, 127, 95, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upjdb"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(0, 246, 95, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u41a8"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(95, 246, 95, 123)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgete"]
+atlas = ExtResource("2_xxcha")
+region = Rect2(190, 246, 95, 123)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rm2ee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh24r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul7y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc6q4")
+}],
+"loop": 1,
+"name": &"down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcvl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d61ma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slxoh")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l64hl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_215dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5bpe")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upjdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u41a8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgete")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(21, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rm2ee"]
+radius = 52.009613
+
+[node name="NPC" type="CharacterBody2D" unique_id=931349635]
+script = ExtResource("1_xxcha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=303674457]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_rm2ee")
+animation = &"down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1403606536]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
+position = Vector2(0.5, 23)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1801137350]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=611395892]
+position = Vector2(3, -6)
+shape = SubResource("CircleShape2D_rm2ee")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

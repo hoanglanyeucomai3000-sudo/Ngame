@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ioxow348qfrb"]
+
+[ext_resource type="Script" uid="uid://c45ed3tcssw6x" path="res://dialogue_ui.gd" id="1_2x5cq"]
+[ext_resource type="Texture2D" uid="uid://bm86cs4vsbs3o" path="res://undefined - Imgur.png" id="1_njptv"]
+
+[node name="DialogueUI" type="CanvasLayer" unique_id=1059453122]
+layer = 13
+script = ExtResource("1_2x5cq")
+
+[node name="DialoguePanel" type="Control" parent="." unique_id=1970388157]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 18.0
+offset_top = 52.0
+offset_right = 54.0
+offset_bottom = 84.0
+
+[node name="Portrait" type="TextureRect" parent="DialoguePanel" unique_id=493682219]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.4720001
+anchor_top = 8.703
+anchor_right = 25.209002
+anchor_bottom = 16.12
+offset_left = -170.88
+offset_top = -374.12
+offset_right = 246.58801
+offset_bottom = 93.53595
+texture = ExtResource("1_njptv")
+
+[node name="Avatar" type="TextureRect" parent="DialoguePanel/Portrait" unique_id=1190311596]
+z_index = 11
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 20.278002
+anchor_top = 9.875
+anchor_right = 25.222002
+anchor_bottom = 15.437
+offset_left = -23555.713
+offset_top = -6547.251
+offset_right = -29312.514
+offset_bottom = -10292.461
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextLabel" type="Label" parent="DialoguePanel" unique_id=1519829672]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.8250003
+anchor_top = 9.55
+anchor_right = 16.778
+anchor_bottom = 17.344002
+offset_left = -1.5258789e-05
+offset_right = -0.0079956055
+offset_bottom = -0.008056641
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="NameLabel" type="Label" parent="DialoguePanel" unique_id=1700212457]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.444
+anchor_top = 15.750001
+anchor_right = 26.194002
+anchor_bottom = 17.369001
+offset_left = 0.015991211
+offset_top = 14.9999695
+offset_right = 0.015930176
+offset_bottom = -0.008117676
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
